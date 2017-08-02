@@ -1,0 +1,10 @@
+{
+  "name": "plotting-d3",
+  "scripts": {
+      "start": "main.js"
+  },
+  "dependencies": {
+      "d3": "4.10.0"
+  }
+}
+

@@ -6,6 +6,12 @@ We can host a web-application, built on the amazing data-driven library **[d3js]
 docker build -t plotting-d3 .
 ```
 
+## Running
+
+```bash
+docker run -it --rm --name=some-d3 plotting-d3
+```
+
 ## References
 
 * [node.js - docker hub](https://hub.docker.com/_/node/)

@@ -8,7 +8,13 @@ RUN curl "https://nodejs.org/download/release/v$NODE_VER/node-v$NODE_VER-linux-x
 	mv "node-v$NODE_VER-linux-x64" "$NODE_HOME"
 ENV PATH="${PATH}:$NODE_HOME/bin"
 
-WORKDIR /home/nodejs
-COPY main.js .
-RUN node main.js
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY package.json /usr/src/app/
+RUN npm install && npm cache clean --force
+COPY . /usr/src/app
+
+EXPOSE 8081 
+CMD [ "npm", "start" ]
 
